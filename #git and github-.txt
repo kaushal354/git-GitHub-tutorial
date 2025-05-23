@@ -1,0 +1,674 @@
+#git and github:-
+
+1.Git:-
+Version Control System is a tools that helps to track changes in code
+Git is a version Control System. it is:
+Advantages:-
+popular
+free and open source
+fast & scalable
+
+#1.track a history of the code we use version control like git.
+#2. To collaborate in team we use git.
+
+2. GitHub:-
+Website that allows developers to store and manage their code using git
+https://github.com
+-> we can use it for upload our project  not only our project we can access other person project in GitHub also
+Folder(Repository)
+
+README.md 
+
+readme is use to show the details of the project and its extension is .md(markdown)
+
+initial commit-> first change in repo
+
+fist we have to add and then commit(changes)
+it saved commit in the form of the commit
+
+
+if we edit read me file then it show 
+Author-Sradha Khapra
+
+Update README.md
+
+we can apply html in readme.md file
+
+
+#Setting up git:-
+1. Visual studio code
+2. Window(Git bash)
+3. Mac(Terminal)
+
+
+git --version
+git version 2.49.0.windows.1
+
+
+
+#Configuring git
+
+1.global level in my system if git changes anything will done by only same email id(if we don't have much GitHub account)
+2. local level in any spefic project or repo in another account
+
+git config --global user.name "My Name"
+git config --global user.email "someone@email.com"
+git config --list
+
+
+
+Example:
+git config --global user.name "Kaushal prasad"
+git config --global user.email "kaushal.pd123456789@gmail.com"
+git config --list
+it can show their:-
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=schannel
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+user.name=Kaushal prasad
+user.email=kaushal.pd123456789@gmail.com
+core.repositoryformatversion=0
+core.filemode=false
+
+
+Command:-   localmacine(means in our system)  remote(in GitHub)  (cd:- means change directory means we want to go inside it) clear (is use to clear the terminal)  ls (use to list the file) ls -a(to list hidden file also)
+
+
+
+
+#Clone & Status:-
+Clone - Cloning a repository on our local machine
+git clone <- some link ->
+Example:
+git clone https://github.com/kaushal354/git-GitHub-tutorial.git
+
+
+status - displays the state of the code
+git status
+
+Example:-
+#if we did't change anything it showing
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+#if we change thing in repo:-
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+#if we add file into local machine:-
+
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+we have 4 type of status in git status:-
+1. untracked
+new files that git doesn't yet track
+
+2.modified
+changed
+
+3. staged
+file is ready to be committed
+if we change(modified) / newfile(untracked) -> (add) -> (staged)
+
+4. unmodified
+unchanged
+
+#if changes occur we have do two thing fist add -> commit
+
+# Add & Commit(add is engagement stage and commit is wedding stage)
+
+add - adds new or changed files in your working directory to the Git staging area.
+git add file name ->
+
+Example :- git add index.html (it staged)
+	   git add . (all file)
+now if we apply gitstatus:-
+
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)       
+        modified:   README.md
+        new file:   index.html
+
+commit - it is the record of change
+git commit -m "some message"
+
+
+Example:-
+[main 9f09e30] ready to commit
+ 2 files changed, 12 insertions(+), 1 deletion(-)
+ create mode 100644 index.html
+
+if git status:-
+
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.        
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+
+# Push Command ( to send from local to remote)
+push - upload local repo content to remote repo
+git push origin main
+
+Example:-
+
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 495 bytes | 495.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/kaushal354/git-GitHub-tutorial.git  
+   8d9d68b..9f09e30  main -> main
+
+
+#origin means in GitHub repo name is origin and we push it to main branch
+
+
+
+
+
+cd "git & github"
+
+# to add local machine project into the GitHub:-
+
+Init Command
+init - used to create a new git repo
+git init
+git remote add origin <- link -> (GitHub repo is remote)
+git remote -v (to verify remote)
+git branch
+(to check branch) (different team have different task like backend fronend and each having a branch)
+#master branch is a main branch(default)
+git branch -M main (to rename branch)
+git push origin main
+
+git push -u origin main (-u to set upstream (if we want to work on same project for long time then we use it))
+
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> echo "# LocalRepo" > README.md
+>>
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git add README.md
+>>
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git commit -m "Initial commit"
+>>
+[main (root-commit) cb34e72] Initial commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 README.md
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git branch -M main
+>>
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git branch
+* main
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo>
+git push -u origin main
+>>
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 249 bytes | 124.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/kaushal354/LocalRepo.git
+ * [new branch]      main -> main
+
+
+#
+
+
+
+#workflow of GitHub:-
+
+Local git
+
+
+git repo-> clone -> changes -> add -> commit -> push
+
+
+#git branches:-
+
+for every seprate work we have created one specific branch.
+
+1    2     3    4    5   
+o -> o ->\ o-> o -> o->\ 8   9
+         ^o -> o ->o->   o-> o >   (merge two branches)
+          5    6   7
+
+
+Branch Commands :- 
+
+git branch
+(to check branch)
+Example:-
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git branch
+* main
+
+
+git branch -M main (to rename branch)(main is new name)
+
+git checkout <- branch name -> (to go from one branch to another)
+(to navigate)
+
+
+git checkout -b new branch name -> (to create new branch)
+
+
+git branch -d branch name ->
+(to delete branch)
+
+
+
+
+
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git checkout -b feature1 
+Switched to a new branch 'feature1'
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git branch
+* feature1
+  main
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git branch
+  feature1
+* main
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo>
+
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git checkout -b feature2
+Switched to a new branch 'feature2'
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git branch
+  feature1
+* feature2(we did't able to delete selected branch)
+  main
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo>
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git branch -d feature1
+Deleted branch feature1 (was 66a4e12).
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo>
+
+
+
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git branch
+* feature2
+  main
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git status
+On branch feature2
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git add .
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git commit -m "Add new branch"
+[feature2 1706edd] Add new branch
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git status
+On branch feature2
+nothing to commit, working tree clean
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo>
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git branch
+* feature2
+  main
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git push origin feature2
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 362 bytes | 181.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: 
+remote: Create a pull request for 'feature2' on GitHub by visiting:
+remote:      https://github.com/kaushal354/LocalRepo/pull/new/feature2
+remote:
+To https://github.com/kaushal354/LocalRepo.git
+ * [new branch]      feature2 -> feature2
+
+
+
+#changes only occur on the specific branch if we change the selected branch it would be remove
+
+
+
+
+
+#to merge feature branch and main branch:-
+
+
+Merging Code
+way 1
+git diff <- branch name ->
+(to compare commits, branches, files & more)
+git merge <-branch name-s=>
+(to merge 2 branches)
+
+way 2
+Create a PR(pull request)
+Pull Request
+It lets you about changes you've pushed to a branch in a repository on GitHub.
+
+if two different branch will be there we directly click on compare & pull request on GitHub so it directly merge with the main branch
+
+
+way1
+
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git branch
+* feature2
+  main
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git diff main
+diff --git a/index.html b/index.html
+index 6d694da..b2870dc 100644
+--- a/index.html
++++ b/index.html
+@@ -1 +1,2 @@
+-<p>hello world</p>
+\ No newline at end of file
++<p>hello world</p>
++<p> this is a feature2</p>
+\ No newline at end of file
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo>
+
+
+
+
+# Pull Command
+
+git pull origin main
+
+used to fetch and download content from a remote repo and immediately update the local repo
+to match that content.
+
+
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git pull origin main
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (1/1), 904 bytes | 150.00 KiB/s, done.
+From https://github.com/kaushal354/LocalRepo
+ * branch            main       -> FETCH_HEAD
+   66a4e12..d0e1184  main       -> origin/main
+Updating 66a4e12..d0e1184
+Fast-forward
+ index.html | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo>
+
+
+
+
+
+#Resolving Merge Conflicts:-
+An event that takes place when Git is unable to automatically resolve differences in code
+between two commits.
+
+
+
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git add .
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git commit -m "add button"
+[main 7b653dd] add button
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git checkout feature2
+Switched to branch 'feature2'
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git branch
+* feature2
+  main
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git add .
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git commit -m "add dropdown"
+[feature2 4f0b610] add dropdown
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git diff main
+diff --git a/index.html b/index.html
+index 883bb70..1414de3 100644
+--- a/index.html
++++ b/index.html
+@@ -1,2 +1,2 @@
+ <p>hello world</p>
+-<p> this is a feature2 (button)</p>
+\ No newline at end of file
++<p> this is a feature2 (dropdown)</p>
+\ No newline at end of file
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo>
+
+
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git merge main
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+PS C:\Users\kaushal prasad\Download
+
+
+
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git add .
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git commit -m "add button"
+[main 7b653dd] add button
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git checkout feature2
+Switched to branch 'feature2'
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git branch
+* feature2
+  main
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git add .
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git commit -m "add dropdown"
+[feature2 4f0b610] add dropdown
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git diff main
+diff --git a/index.html b/index.html
+index 883bb70..1414de3 100644
+--- a/index.html
++++ b/index.html
+@@ -1,2 +1,2 @@
+ <p>hello world</p>
+-<p> this is a feature2 (button)</p>
+\ No newline at end of file
++<p> this is a feature2 (dropdown)</p>
+\ No newline at end of file
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git merge main
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git status
+On branch feature2
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git add .
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git commit -m "add both featuree"
+[feature2 674c5a1] add both featuree
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git status
+On branch feature2
+nothing to commit, working tree clean
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git diff main
+diff --git a/index.html b/index.html
+index 883bb70..298549b 100644
+--- a/index.html
++++ b/index.html
+@@ -1,2 +1,3 @@
+ <p>hello world</p>
+-<p> this is a feature2 (button)</p>
+\ No newline at end of file
++<p> this is a feature2 (dropdown)</p>
++<p> this is a feature2 (button)</p>
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git checkout feature2
+Already on 'feature2'
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git merge feature2 
+Already up to date.
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.        
+  (use "git push" to publish your local commits)
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git merge feature2
+Updating 7b653dd..674c5a1
+Fast-forward
+ index.html | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo>
+
+
+
+
+Undoing Changes
+Case I : staged changes(add) (added but not commit)
+git reset <-file name ->
+git reset (for more than 1 file)
+
+
+
+Case 2 : commited changes (for one commit)
+git reset HEAD-I               (redo last change is head ~ 1)
+				
+
+
+Case 3 : commited changes (for many commits)
+git reset <- commit hash ->
+git reset --hard <- commit hash ->
+
+
+
+
+
+Case 1:-
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git branch
+  feature2
+* main
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git add .
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git status
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.       
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)       
+        modified:   index.html
+
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git reset index.html
+Unstaged changes after reset:
+M       index.html
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git reset
+Unstaged changes after reset:
+M       index.html
+PS C:\Users\kaushal pr
+
+
+
+
+#case 2 :-
+
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git status
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.       
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git add .
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git commit -m "delete button"
+[main 5bd229e] delete button
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git status
+On branch main
+Your branch is ahead of 'origin/main' by 4 commits.       
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git reset HEAD-I 
+fatal: ambiguous argument 'HEAD-I': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:     
+'git <command> [<revision>...] -- [<file>...]'
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git status
+On branch main
+Your branch is ahead of 'origin/main' by 4 commits.       
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo>
+
+
+
+
+git log:-
+to check all commit
+q to quit
+
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git log
+commit 5bd229e2014d9502ccefd57384dafab8ea5ddadf (HEAD -> main)
+Author: Kaushal prasad <kaushal.pd123456789@gmail.com>    
+Date:   Fri May 23 22:49:18 2025 +0530
+
+    delete button
+
+commit 674c5a184f7024323e404860b8d285b345f71556 (feature2)
+Merge: 4f0b610 7b653dd
+Author: Kaushal prasad <kaushal.pd123456789@gmail.com>    
+Date:   Fri May 23 19:08:06 2025 +0530
+
+:q to quit
+
+
+
+
+
+Case 3:- for many commit redo:-
+
+    add button
+
+commit d0e11847164656e3d8e6f0c6cfcebd7b52a3c977 (origin/ma
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git reset 7b653dd251217b342693c051dd3cdb4faafe8bdf
+Unstaged changes after reset:
+M       index.html
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo>
+
+
+
+giPS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo> git reset --hard d0e11847164656e3d8e6f0c6cfcebd7b52a3c977
+HEAD is now at d0e1184 Merge pull request #1 from kaushal354/feature2
+PS C:\Users\kaushal prasad\Downloads\git & github\LocalRepo>t reset --hard d0e11847164656e3d8e6f0c6cfcebd7b52a3c977 (from vs code it also get change)
+
+
+
+
+Fork:-
+A fork is a new repository that shares code and visibility settings with the original "upstream" repository.
+Fork is a rough copy.
+
